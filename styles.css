@@ -45,7 +45,6 @@ main {
 .fiches {
 	flex: 1;
 	margin: 8px;
-<<<<<<< HEAD
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 4px;
@@ -67,13 +66,3 @@ main {
 .fiches article h2 {
 	text-align: center;
 }
-=======
-}
-.fiches img {
-	max-width: 200px;
-}
-.fiches p {
-	margin-top: 4px;
-	margin-bottom: 4px;
-}
->>>>>>> 7d078baf742ae57388056336d3672e9988827bbb
