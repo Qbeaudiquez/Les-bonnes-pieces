@@ -18,7 +18,7 @@ for (let i = 0; i < pieces.length; i++){
         const categorieElement = document.createElement("p");
         categorieElement.innerText = pieces[i].categorie ?? "(aucune catégorie)";
         const descriptionElement = document.createElement("p");
-        descriptionElement.innerText = pieces[i].description ?? "Pasde description pour le moemnt.";
+        descriptionElement.innerText = pieces[i].description ?? "Pas de description pour le moemnt.";
         const disponibiliteElement = document.createElement("p");
         disponibiliteElement.innerText = pieces[i].disponibilite ? "En stock" : "Rupture de stock";
 
@@ -35,3 +35,35 @@ for (let i = 0; i < pieces.length; i++){
 
 }
 
+// Gestion des boutons
+const boutonTrier = document.querySelector(".btn-trier");
+boutonTrier.addEventListener("click", function () {
+  const piecesOrdonnees = Array.from(pieces);
+
+  piecesOrdonnees.sort(function (a, b) {
+    return a.prix - b.prix;
+  });
+});
+
+const boutonTrierDecroissant = document.querySelector(".btn-trier-decroissant");
+boutonTrierDecroissant.addEventListener("click", function () {
+  const piecesOrdonnees = Array.from(pieces);
+
+  piecesOrdonnees.sort(function (a, b) {
+    return b.prix - a.prix;
+  });
+});
+
+const boutonFilter = document.querySelector(".btn-filtrer");
+boutonFilter.addEventListener("click", function (){
+    const piecesFiltrees = pieces.filter(function(piece){
+        return piece.prix <= 35;
+    })
+})
+
+const boutonFilterDesc = document.querySelector(".btn-filtrer-desc");
+boutonFilterDesc.addEventListener("click", function (){
+    const piecesFiltreesDesc = pieces.filter(function(piece){
+        return piece.description;
+    })
+})
